@@ -1,0 +1,125 @@
+.productDetailsContainer {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBtnContainer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.addBtn {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.addBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.productDetailsView {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productContainer {
+    text-decoration: none;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    margin: 10px;
+    transition: all 0.3s ease-out;
+    color: inherit;
+}
+
+.productContainer:hover {
+    transform: scale(1.1);
+}
+
+.itemContainer {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.itemSpinner {
+    font-size: 18px;
+    color: #e4a67c;
+}
+
+.ProductDetailsH2 {
+    text-transform: capitalize;
+}
+
+.productContainerImgContainer {
+    width: 200px;
+    height: 200px;
+}
+
+.productContainerImg {
+    width: 100%;
+    height: 100%;
+}
+
+.productContainerDetailsContainer {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productContainerDetailsP {
+    font-size: 13px;
+    margin: 5px;
+}
+
+@media (max-width: 992px) {
+    .productDetailsContainer {
+        width: 100%;
+    }
+
+    .itemContainer {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 459px) {
+    .productContainer {
+        width: 95%;
+    }
+
+    .productContainerImgContainer {
+        width: 90%;
+        height: 300px;
+    }
+}

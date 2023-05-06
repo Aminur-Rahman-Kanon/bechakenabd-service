@@ -1,0 +1,90 @@
+.homepageContainer {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.systemMainContainer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.systemDashboardContainer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.systemDashboardRow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.systemDashboardColumn {
+    width: 120px;
+    height: 50px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.systemDashboardColumn.header {
+    font-weight: 600;
+}
+
+#columnHeader {
+    width: 180px;
+    justify-content: flex-start;
+    padding-left: 15px;
+    background-color: black;
+    color: white;
+    text-align: left;
+}
+
+.systemDashboardLink {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: inherit;
+}
+
+.systemDashboardLink:hover {
+    background-color: black;
+    color: white;
+}
+
+.statusContainer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 180px;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .homepageContainer {
+        width: 100%;
+    }
+}

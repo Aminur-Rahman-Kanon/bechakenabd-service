@@ -1,0 +1,128 @@
+.productListMain {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productListContainer {
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productContainer {
+    text-decoration: none;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    transition: all 0.3s ease-out;
+}
+
+.productContainer:hover {
+    transform: scale(1.1);
+}
+
+.productImgContainer {
+    width: 150px;
+    height: 150px;
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+}
+
+.productDetailsContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productListH3 {
+    font-size: 14px;
+    margin: 10px;
+}
+
+.productListP {
+    font-size: 13px;
+    margin: 5px;
+}
+
+.defaultDisplay {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.defaultSpinner {
+    font-size: 18px;
+    color: #e4a67c;
+}
+
+.addCategoryContainer {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 180px;
+}
+
+.addCategoryBtn {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+    width: 150px;
+    height: 35px;
+}
+
+.addCategoryBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .productListContainer {
+        width: 100%;
+    }
+}
+
+@media(max-width: 459px) {
+    .productContainer {
+        width: 100%;
+    }
+
+    .defaultDisplay {
+        width: 100%;
+        height: 300px;
+    }
+
+    .productImgContainer {
+        width: 100%;
+        height: 300px;
+    }
+}

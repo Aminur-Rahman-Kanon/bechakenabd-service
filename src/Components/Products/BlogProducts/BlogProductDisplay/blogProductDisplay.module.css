@@ -1,0 +1,131 @@
+.blogMain {
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogDisplayMain {
+    width: 100%;
+    margin: 30px auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogDisplayContainer {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogDisplayImgContainer {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+.blogDisplayImg {
+    width: 100%;
+    height: 100%;
+}
+
+.blogDetailsContainer {
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogInputContainer {
+    width: 80%;
+}
+
+.input {
+    width: 100%;
+    height: 20px;
+    padding-left: 10px;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.detailsInput{
+    width: 100%;
+    height: 150px;
+    padding-left: 10px;
+}
+
+.btnGroup {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 150px;
+    height: 35px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.defaultDisplay {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(211, 211, 211, 0.89);
+    border-radius: 5px;
+}
+
+.spinner {
+    color: rgb(224, 118, 24);
+    font-size: 22px;
+}
+
+.displayStatusContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayStatusBtn {
+    width: 200px;
+    height: 35px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.displayStatusBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .blogMain {
+        width: 100%;
+    }
+}
+
+@media (max-width: 432px) {
+    .displayStatusBtn {
+        width: 100%;
+    }
+}
