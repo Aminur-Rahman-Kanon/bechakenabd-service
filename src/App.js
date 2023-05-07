@@ -7,6 +7,7 @@ import ProductList from './Components/Products/ProductList/productList';
 import AddProducts from './Components/Products/AddProducts/addroducts';
 import BlogProducts from './Components/Products/BlogProducts/blogProduct';
 import BlogProductDisplay from './Components/Products/BlogProducts/BlogProductDisplay/blogProductDisplay';
+import AddBlogProduct from './Components/Products/BlogProducts/AddBlogProduct/addbBlogProduct';
 import logo from './Assets/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faPhone, faMessage, faUsers, faCartShopping, faBagShopping } from '@fortawesome/free-solid-svg-icons';
@@ -108,8 +109,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/product-list' element={<ProductList />} />
+          <Route path='/add-blog-item' element={<AddBlogProduct />}/>
           <Route path='/blogItems' element={<BlogProducts />}/>
-          <Route path='/blogItems/:blogId/:index' element={<BlogProductDisplay />}/>
+          <Route path='/blogItems/:blogId' element={<BlogProductDisplay />}/>
           <Route path='/product/:productId' element={<ProductDetails />} />
           <Route path='/product/:productCategory/:productId' element={<ProductSummary/>} />
           <Route path='/add-products/:productId' element={<AddProducts />} />

@@ -11,6 +11,8 @@ function Homepage() {
 
     const date = new Date().toDateString();
 
+    console.log(products);
+
     return (
         <div className={styles.homepageContainer}>
             <div className={styles.systemMainContainer}>
@@ -105,9 +107,14 @@ function Homepage() {
                             <div className={styles.systemDashboardColumn}>0</div>
                             <div className={styles.systemDashboardColumn}><Link to='/product/latestItem' className={styles.systemDashboardLink}>Check</Link></div>
                         </div>
+                        <div className={styles.systemDashboardRow}>
+                            <div className={styles.systemDashboardColumn} id={styles.columnHeader}>Blog</div>
+                            <div className={styles.systemDashboardColumn}>{products.blogItem ? products.blogItem.length : 0}</div>
+                            <div className={styles.systemDashboardColumn}>0</div>
+                            <div className={styles.systemDashboardColumn}><Link to='/blogItems' className={styles.systemDashboardLink}>Check</Link></div>
+                        </div>
                         </>
                         : null
-                    
                     }
                 </div>
             </div>

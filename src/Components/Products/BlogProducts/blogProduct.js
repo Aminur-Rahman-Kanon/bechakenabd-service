@@ -7,28 +7,25 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 
 function BlogProducts () {
-    
-    let productName = useParams().productId;
+
     const products = useContext(AuthContext);
 
     let displayProducts = null;
 
-    if (products) {
-        if (Object.keys(products).length){
-            if (products['blogItems'].length){
-                displayProducts = products['blogItems'].map((product, idx) => {
-                    return <Link to={`/blogItems/${product._id}/${idx+1}`} key={product._id} className={styles.productContainer}>
-                        <div className={styles.productContainerImgContainer}>
-                            <img src={product.img} alt={product.name} className={styles.productContainerImg} />
-                        </div>
-                        <div className={styles.productContainerDetailsContainer}>
-                            <p className={styles.productContainerDetailsP}>Category: {product.category}</p>
-                            <p className={styles.productContainerDetailsP}>Title: {product.title}</p>
-                            <p className={styles.productContainerDetailsP}>Date: {product.date}</p>
-                        </div>
-                    </Link>
-                })
-            }
+    if (products !== undefined) {
+        if (products.hasOwnProperty('blogItem')){
+            displayProducts = products['blogItem'].map((product, idx) => {
+                return <Link to={`/blogItems/${product._id}`} key={product._id} className={styles.productContainer}>
+                    <div className={styles.productContainerImgContainer}>
+                        <img src={product.img} alt={product.name} className={styles.productContainerImg} />
+                    </div>
+                    <div className={styles.productContainerDetailsContainer}>
+                        <p className={styles.productContainerDetailsP}>Category: {product.category}</p>
+                        <p className={styles.productContainerDetailsP}>Title: {product.title}</p>
+                        <p className={styles.productContainerDetailsP}>Date: {product.date}</p>
+                    </div>
+                </Link>
+            })
         }
     }
     else {
@@ -40,9 +37,9 @@ function BlogProducts () {
     }
     return (
         <div className={styles.productDetailsContainer}>
-            {/* <div className={styles.addBtnContainer}>
-                <a href={`/add-products/${productName}`} className={styles.addBtn}>Add Item</a>
-            </div> */}
+            <div className={styles.addBtnContainer}>
+                <a href='/add-blog-item' className={styles.addBtn}>Add Item</a>
+            </div>
             <h2 className={styles.ProductDetailsH2}>Blog Items</h2>
             <div className={styles.productDetailsView}>
                 {displayProducts}

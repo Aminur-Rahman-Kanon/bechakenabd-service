@@ -10,13 +10,9 @@ import Spinner from '../../../Others/Spinner/spinner';
 
 function BlogProductDisplay () {
 
-    const navigate = useNavigate();
-
     const products = useContext(AuthContext);
 
     const productId = useParams();
-
-    const productIndex = productId.index;
 
     const [product, setProduct] = useState([]);
 
@@ -26,7 +22,7 @@ function BlogProductDisplay () {
 
     const [details, setDetails] = useState('');
 
-    const [photo, setPhoto] = useState(null);
+    const [photo, setPhoto] = useState([]);
 
     const [status, setStatus]= useState('');
 
@@ -34,20 +30,17 @@ function BlogProductDisplay () {
 
     const [spinner, setSpinner] = useState(false);
 
-    console.log(productId.blogId);
-
-    console.log(product)
-    console.log(products)
-
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
         setSpinner(true);
         const formData = new FormData();
 
-        formData.append('data', JSON.stringify({ title, date, details, productIndex, index: productId.blogId }));
-        formData.append('photo', photo);
+        formData.append('data', JSON.stringify({ title, date, details, id: productId.blogId }));
+        for (let i=0; i<photo.length; i++){
+            formData.append('photo', photo[i]);
+        }
 
-        fetch('https://bechakenabd.onrender.com/update-blog', {
+        await fetch('https://bechakenabd.onrender.com/update-blog', {
             method: 'POST',
             body: formData
         }).then(res => res.json()).then(data => {
@@ -62,15 +55,13 @@ function BlogProductDisplay () {
     }
 
     useEffect(() => {
-        if (products){
-            if (Object.keys(products).length){
-                if (products['blogItems'].length){
-                    const extractItem = products['blogItems'].filter(item => item._id === productId.blogId);
-                    setProduct(extractItem);
-                    setTitle(extractItem[0].title);
-                    setDate(extractItem[0].date);
-                    setDetails(extractItem[0].details);
-                }
+        if (products !== undefined){
+            if (products.hasOwnProperty('blogItem')){
+                const extractItem = products['blogItem'].filter(item => item._id === productId.blogId);
+                setProduct(extractItem);
+                setTitle(extractItem[0].title);
+                setDate(extractItem[0].date);
+                setDetails(extractItem[0].details);
             }
         }
     }, [products])
@@ -82,14 +73,15 @@ function BlogProductDisplay () {
     if (product.length){
         displayProduct = product.map(item => <div key={item._id} className={styles.blogDisplayContainer}>
             <div className={styles.blogDisplayImgContainer}>
-                <img src={item.img} alt={item.title} className={styles.blogDisplayImg}/>
+                <img src={item.img[0]} alt={item.title} className={styles.blogDisplayImg}/>
             </div>
             <form className={styles.blogDetailsContainer}>
                 <div className={styles.blogInputContainer}>
                     <input type='file'
+                           multiple
                            className={styles.input}
                            style={{padding: '5px'}}
-                           onChange={(e) => setPhoto(e.target.files[0])}/>
+                           onChange={(e) => setPhoto(e.target.files)}/>
                 </div>
 
                 <div className={styles.blogInputContainer}>
@@ -142,6 +134,7 @@ function BlogProductDisplay () {
     
     return (
         <>
+        <Spinner spinner={spinner}/>
         <Modal modal={modal}>
             {displayStatus}
         </Modal>

@@ -1,0 +1,116 @@
+.AddBlogProductContainer {
+    width: 80%;
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    width: 70%;
+    min-width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textarea {
+    width: 92%;
+    height: 150px;
+}
+
+.input {
+    width: 90%;
+    height: 20px;
+    border: 1px solid rgb(85, 85, 85);
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.submitBtn {
+    width: 200px;
+    height: 35px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.submitBtn:disabled {
+    cursor: default;
+    background-color: white;
+    color: black;
+    opacity: 0.5;
+}
+
+.displayStatusContainer {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayStatusBtn {
+    width: 200px;
+    height: 35px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.displayStatusBtn:hover {
+    background-color: black;
+    color: white;
+}
+
+.productExistContainer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productExistImgContainer {
+    width: 200px;
+    height: 200px;
+}
+
+.productExistImg {
+    width: 100%;
+    height: 100%;
+}
+
+.productExistDetailsContainer {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .AddBlogProductContainer {
+        width: 100%;
+    }
+}
